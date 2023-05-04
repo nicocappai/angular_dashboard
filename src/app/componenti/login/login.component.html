@@ -1,14 +1,26 @@
 
 <h1>Login</h1>
 
-<form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+
+<form #loginform="ngForm" (ngSubmit)="signIn(loginform)">
 <mat-form-field appearance="fill" >
-  <mat-label>Input</mat-label>
-  <input matInput type="email" name="email" required ngModel />
+  <mat-label>Email</mat-label>
+  <input matInput type="email" name="email" id="email" class="form-control" #email="ngModel" required ngModel/>
+  <div *ngIf="email.dirty && email.touched && email.invalid">
+      <div *ngIf="email.errors?.['required']">
+        Email is required
+      </div>
+  </div>
 </mat-form-field>
 <mat-form-field appearance="fill">
-  <mat-label>Input</mat-label>
-  <input matInput type="password" name="password" required ngModel />
+  <mat-label>Password</mat-label>
+  <input matInput type="password" name="password" id="password" #password="ngModel" required ngModel />
+  <div *ngIf="password.dirty && password.touched && password.invalid">
+    <div *ngIf="password.errors?.['required']">
+      Password is required
+    </div>
+</div>
 </mat-form-field>
 <button mat-raised-button color="primary" type="submit" [disabled]="!loginform.valid">Invia</button>
 </form>
+<button mat-raised-button color="accent" type="submit"  routerLink="" [routerLinkActive]="'active'">Homepage</button>

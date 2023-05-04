@@ -1,1 +1,39 @@
-<p>pagina2 works!</p>
+<!-- <div>
+  <h1>Lista Clienti</h1>
+  <div>
+    <div *ngFor="let cliente of clienti">
+      <p>{{cliente.nome}} {{cliente.email}} {{cliente.nazione}}</p>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <h1 class="pt-2">Lista Clienti</h1>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Nazione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clienti">
+            <th scope="row">{{cliente.id}}</th>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.nazione}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="onDeleteCliente()">Elimina Cliente</button>
+<button mat-raised-button color="primary" (click)="onPatchCliente()">Modifica Cliente</button>

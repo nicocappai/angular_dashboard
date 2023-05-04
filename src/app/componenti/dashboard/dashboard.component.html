@@ -2,8 +2,8 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened>
     <mat-list role="list">
-      <mat-list-item role="listitem" routerLink="pagina1" [routerLinkActive]="'active'">Pagina 1</mat-list-item>
-      <mat-list-item role="listitem" routerLink="pagina2" [routerLinkActive]="'active'">Pagina 2</mat-list-item>
+      <mat-list-item role="listitem" routerLink="pagina1" [routerLinkActive]="'active'">Inserimento</mat-list-item>
+      <mat-list-item role="listitem" routerLink="pagina2" [routerLinkActive]="'active'">Lista</mat-list-item>
       <mat-list-item role="listitem" routerLink="pagina3" [routerLinkActive]="'active'">Pagina 3</mat-list-item>
     </mat-list>
   </mat-sidenav>
@@ -14,8 +14,14 @@
       </button>
       <span>My App</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>logout</mat-icon>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="login" [routerLinkActive]="'active'">
+        <mat-icon *ngIf="isLoggedIn">login</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="register" [routerLinkActive]="'active'">
+        <mat-icon *ngIf="isLoggedIn">person_add</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="login" [routerLinkActive]="'active'">
+        <mat-icon *ngIf="isLoggedIn">logout</mat-icon>
       </button>
     </mat-toolbar>
 
