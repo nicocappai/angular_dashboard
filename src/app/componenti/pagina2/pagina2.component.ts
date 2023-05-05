@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pagina1Service } from 'src/app/services/pagina1.service';
-import { PeriodicElement } from '../model/periodicElement.model';
+
 
 @Component({
   selector: 'app-pagina2',
@@ -9,9 +9,6 @@ import { PeriodicElement } from '../model/periodicElement.model';
   styleUrls: ['./pagina2.component.css']
 })
 export class Pagina2Component implements OnInit{
-
-  dataSource: PeriodicElement[] = []
-
 
   clienti : any
 

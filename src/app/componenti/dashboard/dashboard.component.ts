@@ -11,10 +11,14 @@ export class DashboardComponent implements OnInit{
 
   public isLoggedIn = false
 
-  constructor( private auth: AuthService, private router: Router){}
+  constructor( private authservice: AuthService, private router: Router){}
 
   ngOnInit(): void {
-    this.isLoggedIn = this.auth.isLoggedIn();
+    this.isLoggedIn = this.authservice.isAuthenticated();
+  }
+
+  onLogout(){
+    this.authservice.logout()
   }
 
 }

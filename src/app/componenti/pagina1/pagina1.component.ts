@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pagina1Service } from 'src/app/services/pagina1.service';
@@ -30,7 +31,7 @@ export class Pagina1Component implements OnInit{
       { nome: this.homeform.value.nome , email: this.homeform.value.email, nazione: this.homeform.value.nazione}
     ).subscribe(data => {
       console.log(data);
-
+      this.homeform.reset()
     })
   }
 

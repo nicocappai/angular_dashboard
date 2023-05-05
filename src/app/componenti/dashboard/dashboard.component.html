@@ -20,7 +20,7 @@
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="register" [routerLinkActive]="'active'">
         <mat-icon *ngIf="isLoggedIn">person_add</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="login" [routerLinkActive]="'active'">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="onLogout()">
         <mat-icon *ngIf="isLoggedIn">logout</mat-icon>
       </button>
     </mat-toolbar>
